@@ -7,5 +7,5 @@ public class pullDemo{
 
         system.debug('123 push demo');
     }
-
+ 
 }
