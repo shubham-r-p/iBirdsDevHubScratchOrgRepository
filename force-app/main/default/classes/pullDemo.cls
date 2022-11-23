@@ -6,6 +6,9 @@ public class pullDemo{
         system.debug('pull demo');
 
         system.debug('123 push demo');
+
+        system.debug('123 github push demo');
+
     }
  
 }
