@@ -12,6 +12,8 @@ public class pullDemo{
         system.debug('123 github push demo 2');
 
 
+        system.debug('123 github push demo e');
+
     }
  
 }
