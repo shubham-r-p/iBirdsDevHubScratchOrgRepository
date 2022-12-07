@@ -1,0 +1,36 @@
+# This is a basic workflow to help you get started with Actions
+
+name: createPullReqOnPush
+
+# Controls when the workflow will run
+
+on: 
+
+  # Triggers the workflow on push or pull request events but only for the master branch
+
+  push: 
+    branches: contactListAndView
+    
+# Jobs to be executed
+jobs:
+  
+        runs-on: ubuntu-latest
+
+         action-pull-request:
+      
+      steps:
+      - name: Checkout repoistory
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Run the Action
+        if: startsWith(github.ref, 'refs/heads/demo')
+        uses: devops-infra/action-pull-request@v0.4.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_SCOPED_TOKEN }}
+        with:
+            github_token: ${{ secrets.REPO_SCOPED_TOKEN }}
+            title: Automatic pull request                           
+            get_diff: true       
+   
+   
